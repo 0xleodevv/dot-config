@@ -32,7 +32,7 @@
   "plenary.nvim": { "branch": "master", "commit": "3707cdb1e43f5cea73afb6037e6494e7ce847a66" },
   "render-markdown.nvim": { "branch": "main", "commit": "ad055861d17afe058bd835e82292e14a64b51b1d" },
   "rose-pine": { "branch": "main", "commit": "42f0724e0bca9f57f0bcfa688787c37b8d4befe8" },
-  "snacks.nvim": { "branch": "main", "commit": "a4b0a85e3bc68fe1aeca1ee4161053dabaeb856c" },
+  "snacks.nvim": { "branch": "main", "commit": "2ff8ce0208d3bf842d74fabc91a4a07faf23f3e1" },
   "sqlite.lua": { "branch": "master", "commit": "b487fcc8937b683942a1f7d9662fcf50ca5acd58" },
   "substitute.nvim": { "branch": "main", "commit": "97f49d16f8eea7967d41db4f657dd63af53eeba1" },
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "2c50854895c9b553482d4289976194a477b41b8f" },

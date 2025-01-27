@@ -14,7 +14,7 @@ return {
 		},
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "ts_ls", "rust_analyzer", "lua_ls", "cairo_ls" },
+				ensure_installed = { "ts_ls", "rust_analyzer", "lua_ls" },
 			})
 		end,
 	},
@@ -67,10 +67,6 @@ return {
 
 			local lspconfig = require("lspconfig")
 
-			lspconfig.cairo_ls.setup({
-				capabilities = capabilities,
-			})
-
 			lspconfig.svelte.setup({
 				capabilities = capabilities,
 			})
@@ -90,7 +86,7 @@ return {
 				},
 			})
 
-			lspconfig.emmet_ls.setup({
+			lspconfig.emmet_language_server.setup({
 				capabilities = capabilities,
 			})
 

@@ -9,7 +9,11 @@ return {
 			char = "┊",
 		} },
 		picker = {},
-		zen = {},
+		zen = {
+			toggles = {
+				dim = false,
+			},
+		},
 		dashboard = {
 			preset = {
 				keys = {

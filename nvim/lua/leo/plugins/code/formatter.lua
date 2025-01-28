@@ -21,16 +21,6 @@ return {
 				python = { "isort", "black" },
 			},
 
-			formatters = {
-				scarb_fmt = {
-					command = "/Users/leopat/.local/share/mise/shims/scarb",
-					args = { "fmt" },
-					stdin = false,
-					cwd = require("conform.util").root_file({ "Scarb.toml" }),
-					-- When cwd is not found, don't run the formatter
-					require_cwd = true,
-				},
-			},
 			format_on_save = {
 				lsp_fallback = true,
 				async = false,

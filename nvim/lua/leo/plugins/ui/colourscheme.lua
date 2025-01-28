@@ -1,5 +1,5 @@
 return {
-	{ "catppuccin/nvim" },
+	{ "datsfilipe/vesper.nvim" },
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",

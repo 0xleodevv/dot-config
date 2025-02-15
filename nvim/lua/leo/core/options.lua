@@ -1,7 +1,6 @@
--- relative line numbers
-
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.o.shell = "/bin/zsh"
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4

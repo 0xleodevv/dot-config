@@ -10,7 +10,7 @@ return {
 				transparent = true,
 				overrides = function(colors)
 					return {
-						-- ["@function.method.call.solidity"] = { fg = colors.fg, italic = true },
+						["@function.method.call.solidity"] = { fg = colors.fg, italic = true },
 						["@variable.member.solidity"] = { fg = colors.blue, italic = true },
 					}
 				end,

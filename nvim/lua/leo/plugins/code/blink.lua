@@ -35,17 +35,7 @@ return {
 		},
 		signature = { enabled = true, window = { border = "single" } },
 		sources = {
-			default = function()
-				local node = vim.treesitter.get_node()
-				if
-					node
-					and vim.tbl_contains({ "comment", "line_comment", "comment_content", "block_comment" }, node:type())
-				then
-					return false
-				else
-					return { "lsp", "path", "buffer", "snippets" }
-				end
-			end,
+			default = { "lsp", "path", "buffer", "snippets" },
 		},
 
 		enabled = function()

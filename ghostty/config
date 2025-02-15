@@ -1,8 +1,12 @@
-theme = "rose-pine"
+# theme = "rose-pine"
+theme = "cyberdream.txt"
+background-opacity = 0.95
+background-blur = true
+
 
 # Font
 font-family = "IosevkaTerm NFM Medium"
-font-family-italic = "IosevkaTerm NFM Medium Oblique"
+font-family-italic = "IosevkaTerm NFM Medium"
 font-family-bold-italic= "IosevkaTerm NFM SemiBold Oblique"
 font-size = 14
 adjust-cell-height = 2

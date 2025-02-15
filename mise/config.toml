@@ -1,4 +1,5 @@
 [tools]
+bun = "latest"
 node = "20"
 rust = "latest"
 scarb = "2.9.2"

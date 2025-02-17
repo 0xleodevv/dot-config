@@ -13,7 +13,9 @@ return {
 			["<C-b>"] = { "scroll_documentation_up", "fallback" },
 			["<C-f>"] = { "scroll_documentation_down", "fallback" },
 			["<C-e>"] = { "hide", "fallback" },
-			cmdline = {
+		},
+		cmdline = {
+			keymap = {
 				["<Tab>"] = { "show", "select_next", "fallback" },
 				["<CR>"] = { "accept", "fallback" },
 				["<C-k>"] = { "select_prev", "fallback" },

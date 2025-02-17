@@ -1,6 +1,5 @@
 return {
 	{ "datsfilipe/vesper.nvim" },
-	-- { "projekt0n/github-nvim-theme" },
 	{
 		"scottmckendry/cyberdream.nvim",
 		lazy = false,
@@ -11,6 +10,7 @@ return {
 				overrides = function(colors)
 					return {
 						["@function.method.call.solidity"] = { fg = colors.fg, italic = true },
+						SnacksPickerSearch = { bg = "#3C4048" },
 						["@variable.member.solidity"] = { fg = colors.blue, italic = true },
 					}
 				end,

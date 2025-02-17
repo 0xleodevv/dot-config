@@ -9,6 +9,7 @@ return {
 			char = "┊",
 		} },
 		picker = {},
+		input = {},
 		zen = {
 			toggles = {
 				dim = false,

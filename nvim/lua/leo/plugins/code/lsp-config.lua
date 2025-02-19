@@ -14,7 +14,7 @@ return {
 		},
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "ts_ls", "rust_analyzer", "lua_ls" },
+				ensure_installed = { "ts_ls", "rust_analyzer", "lua_ls", "solidity_ls" },
 			})
 		end,
 	},
@@ -62,7 +62,6 @@ return {
 			-- better ts error messages
 			require("ts-error-translator").setup()
 
-			-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 			local lspconfig = require("lspconfig")
@@ -142,18 +141,6 @@ return {
 			keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Smart rename" })
 			keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show documentation for what is under cursor" })
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", { desc = "Restart LSP" })
-
-			-- custom command to toggle diagnostics
-			vim.api.nvim_create_user_command("DiagnosticToggle", function()
-				local config = vim.diagnostic.config
-				local vt = config().virtual_text
-				config({
-					virtual_text = not vt,
-					underline = not vt,
-					signs = not vt,
-				})
-			end, { desc = "toggle diagnostic" })
-			keymap.set("n", "<leader>lx", "<cmd>DiagnosticToggle<CR>", { desc = "Toggle diagnostics" })
 		end,
 	},
 }

@@ -92,6 +92,14 @@ return {
 
 			lspconfig.solidity_ls.setup({
 				capabilities = capabilities,
+				root_dir = lspconfig.util.root_pattern("hardhat.config.js", "foundry.toml", ".git"),
+				settings = {
+					solidity = {
+						compileUsingRemoteVersion = "latest",
+						defaultCompiler = "remote",
+						enabledAsYouTypeCompilationErrorCheck = true,
+					},
+				},
 			})
 
 			lspconfig.tailwindcss.setup({

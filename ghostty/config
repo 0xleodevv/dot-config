@@ -1,7 +1,7 @@
 # theme = "rose-pine"
-theme = "cyberdream.txt"
-background-opacity = 0.95
-background-blur = true
+theme = "GitHub-Dark-Default"
+# background-opacity = 0.95
+# background-blur = true
 
 
 # Font

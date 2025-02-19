@@ -8,6 +8,7 @@ return {
 		conform.setup({
 			formatters_by_ft = {
 				javascript = { "prettier" },
+				solidity = { "forge_fmt" },
 				typescript = { "prettier" },
 				javascriptreact = { "prettier" },
 				typescriptreact = { "prettier" },
@@ -20,6 +21,15 @@ return {
 				python = { "isort", "black" },
 			},
 
+			formatters = {
+				forge_fmt = {
+					command = "/Users/leopat/.foundry/bin/forge",
+					args = { "fmt" },
+					stdin = false,
+					cwd = require("conform.util").root_file({ "foundry.toml" }),
+					require_cwd = true,
+				},
+			},
 			format_on_save = {
 				lsp_fallback = true,
 				async = false,

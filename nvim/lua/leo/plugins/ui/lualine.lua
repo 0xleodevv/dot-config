@@ -2,7 +2,6 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = {
 		"AndreM222/copilot-lualine",
-		"will-lynas/grapple-line.nvim",
 	},
 	config = function()
 		local lualine = require("lualine")
@@ -33,7 +32,9 @@ return {
 						separator = { right = " ", left = "" },
 					},
 				},
-				lualine_b = { { "filename" }, { require("grapple-line").lualine } },
+				lualine_b = {
+					{ "filename", separator = { right = " ", left = "" } },
+				},
 				lualine_c = {
 					{
 						"branch",
@@ -53,8 +54,6 @@ return {
 						padding = 0,
 					},
 				},
-				lualine_d = {},
-				lualine_e = {},
 				lualine_x = {
 					{ "" },
 					{
@@ -83,6 +82,7 @@ return {
 					{
 						"location",
 						icon = { "", align = "left" },
+						separator = { right = "", left = "" },
 					},
 					{
 						"progress",

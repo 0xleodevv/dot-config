@@ -1,33 +1,29 @@
 return {
-	{ "datsfilipe/vesper.nvim" },
 	{
-		"scottmckendry/cyberdream.nvim",
-		lazy = false,
-		priority = 1000,
+		"projekt0n/github-nvim-theme",
 		config = function()
-			require("cyberdream").setup({
-				transparent = true,
-				overrides = function(colors)
-					return {
-						["@function.method.call.solidity"] = { fg = colors.fg, italic = true },
-						SnacksPickerSearch = { bg = "#3C4048" },
-						["@variable.member.solidity"] = { fg = colors.blue, italic = true },
-					}
-				end,
-			})
-			vim.cmd("colorscheme cyberdream")
+			vim.cmd("colorscheme github_dark_default")
 		end,
 	},
 	{
-		"rose-pine/neovim",
-		name = "rose-pine",
+		"navarasu/onedark.nvim",
 		config = function()
-			require("rose-pine").setup({
-				highlight_groups = {
-					["@variable.member"] = { fg = "iris" },
-					["@property"] = { fg = "iris" },
+			require("onedark").setup({
+				style = "darker",
+				transparent = true,
+				code_style = {
+					comments = "none",
+				},
+				lualine = {
+					transparent = true,
+				},
+				highlights = {
+					NormalFloat = { fg = "none", bg = "none" },
+					FloatBorder = { fg = "none", bg = "none" },
+					["@comment"] = { fg = "#798191" },
 				},
 			})
+			-- vim.cmd("colorscheme onedark")
 		end,
 	},
 }

@@ -2,6 +2,17 @@ return {
 	{
 		"projekt0n/github-nvim-theme",
 		config = function()
+			local groups = {
+				all = {
+					-- Special = { fg = "#5FC2FF" },
+					["@include"] = { fg = "palette.red" },
+					["@type.builtin.solidity"] = { fg = "#5FC2FF" },
+					FloatBorder = { fg = "palette.white" },
+					NormalFloat = { bg = "bg1" },
+					NeoTreeDirectoryIcon = { fg = "palette.magenta" },
+				},
+			}
+			require("github-theme").setup({ groups = groups })
 			vim.cmd("colorscheme github_dark_default")
 		end,
 	},

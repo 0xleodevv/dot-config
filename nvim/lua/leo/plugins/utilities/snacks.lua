@@ -11,6 +11,11 @@ return {
 		picker = {},
 		input = {},
 		zen = {
+			win = {
+				backdrop = {
+					transparent = false,
+				},
+			},
 			toggles = {
 				dim = false,
 			},
@@ -150,6 +155,13 @@ return {
 				Snacks.picker.lsp_symbols()
 			end,
 			desc = "LSP Symbols",
+		},
+		{
+			"<leader>fM",
+			function()
+				Snacks.picker.lsp_workspace_symbols()
+			end,
+			desc = "Workspace LSP Symbols",
 		},
 		{
 			"<leader>gc",

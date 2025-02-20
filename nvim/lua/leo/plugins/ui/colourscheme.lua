@@ -10,6 +10,11 @@ return {
 					FloatBorder = { fg = "palette.white" },
 					NormalFloat = { bg = "bg1" },
 					NeoTreeDirectoryIcon = { fg = "palette.magenta" },
+					illuminatedWord = { bg = "sel0" },
+					illuminatedCurWord = { bg = "sel0" },
+					IlluminatedWordText = { bg = "sel0" },
+					IlluminatedWordRead = { bg = "sel0" },
+					IlluminatedWordWrite = { bg = "sel0" },
 				},
 			}
 			require("github-theme").setup({ groups = groups })

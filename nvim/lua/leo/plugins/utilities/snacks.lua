@@ -79,6 +79,16 @@ return {
 			desc = "Zen Mode",
 		},
 		{
+			"<leader>fg",
+			function()
+				Snacks.picker.git_files({
+					untracked = true,
+					submodules = false,
+				})
+			end,
+			desc = "Find Git Files",
+		},
+		{
 			"<leader>ff",
 			function()
 				Snacks.picker.files()

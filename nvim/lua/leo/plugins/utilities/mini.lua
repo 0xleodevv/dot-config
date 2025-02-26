@@ -38,5 +38,6 @@ return {
 		require("mini.comment").setup()
 		require("mini.ai").setup()
 		require("mini.bracketed").setup()
+		require("mini.cursorword").setup()
 	end,
 }

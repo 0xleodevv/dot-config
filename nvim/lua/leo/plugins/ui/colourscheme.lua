@@ -9,6 +9,7 @@ return {
 					-- Special = { fg = "#5FC2FF" },
 					["@include"] = { fg = "palette.red" },
 					["@type.builtin.solidity"] = { fg = "#5FC2FF" },
+					["@function.builtin.solidity"] = { fg = "palette.red" },
 					FloatBorder = { fg = "palette.white" },
 					NormalFloat = { bg = "bg1" },
 					NeoTreeDirectoryIcon = { fg = "palette.magenta" },
@@ -20,28 +21,14 @@ return {
 				},
 			}
 			require("github-theme").setup({ groups = groups })
+
 			vim.cmd("colorscheme github_dark_default")
 		end,
 	},
 	{
-		"navarasu/onedark.nvim",
-		config = function()
-			require("onedark").setup({
-				style = "darker",
-				transparent = true,
-				code_style = {
-					comments = "none",
-				},
-				lualine = {
-					transparent = true,
-				},
-				highlights = {
-					NormalFloat = { fg = "none", bg = "none" },
-					FloatBorder = { fg = "none", bg = "none" },
-					["@comment"] = { fg = "#798191" },
-				},
-			})
-			-- vim.cmd("colorscheme onedark")
-		end,
+		"marko-cerovac/material.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function() end,
 	},
 }

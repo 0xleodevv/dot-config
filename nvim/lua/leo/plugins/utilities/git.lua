@@ -1,5 +1,16 @@
 return {
 	{ "akinsho/git-conflict.nvim", version = "*", config = true },
+	-- {
+	-- 	"pwntester/octo.nvim",
+	-- 	requires = {
+	-- 		"folke/snacks.nvim",
+	-- 	},
+	-- 	config = function()
+	-- 		require("octo").setup({
+	-- 			picker = "snacks",
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"lewis6991/gitsigns.nvim",
 		event = { "BufReadPre", "BufNewFile" },

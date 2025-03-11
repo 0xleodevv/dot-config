@@ -1,3 +1,4 @@
+vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46_cache/"
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({

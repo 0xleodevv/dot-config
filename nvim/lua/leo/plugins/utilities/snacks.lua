@@ -131,6 +131,20 @@ return {
 			desc = "Grep",
 		},
 		{
+			"<leader>fD",
+			function()
+				Snacks.picker.diagnostics()
+			end,
+			desc = "Diagnostics",
+		},
+		{
+			"<leader>fd",
+			function()
+				Snacks.picker.diagnostics_buffer()
+			end,
+			desc = "Buffer Diagnostics",
+		},
+		{
 			"gd",
 			function()
 				Snacks.picker.lsp_definitions()

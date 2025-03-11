@@ -66,6 +66,19 @@ return {
 
 			local lspconfig = require("lspconfig")
 
+			lspconfig.typos_lsp.setup({
+				-- Logging level of the language server. Logs appear in :LspLog. Defaults to error.
+				cmd_env = { RUST_LOG = "error" },
+				init_options = {
+					-- Custom config. Used together with a config file found in the workspace or its parents,
+					-- taking precedence for settings declared in both.
+					-- Equivalent to the typos `--config` cli argument.
+					config = "~/code/typos-lsp/crates/typos-lsp/tests/typos.toml",
+					diagnosticSeverity = "Warning",
+				},
+				filetypes = { "markdown", "md" },
+			})
+
 			lspconfig.svelte.setup({
 				capabilities = capabilities,
 			})

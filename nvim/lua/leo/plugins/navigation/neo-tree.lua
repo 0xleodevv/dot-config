@@ -12,14 +12,6 @@ return {
 			{ "<leader>ee", ":Neotree filesystem reveal toggle left<CR>", silent = true, desc = "Left File Explorer" },
 		},
 		config = function()
-			require("nvim-web-devicons").set_icon({
-				cairo = {
-					icon = "",
-					color = "#EB5951",
-					cterm_color = "65",
-					name = "Cairo",
-				},
-			})
 			require("neo-tree").setup({
 				close_if_last_window = true,
 				popup_border_style = "single",

@@ -76,7 +76,7 @@ return {
 					config = "~/code/typos-lsp/crates/typos-lsp/tests/typos.toml",
 					diagnosticSeverity = "Warning",
 				},
-				filetypes = { "markdown", "md" },
+				-- filetypes = { "markdown", "md", "solidity" },
 			})
 
 			lspconfig.svelte.setup({
@@ -102,17 +102,25 @@ return {
 				capabilities = capabilities,
 			})
 
-			lspconfig.solidity_ls.setup({
+			lspconfig.solidity_ls_nomicfoundation.setup({
 				capabilities = capabilities,
-				root_dir = lspconfig.util.root_pattern("hardhat.config.js", "foundry.toml", ".git"),
-				settings = {
-					solidity = {
-						compileUsingRemoteVersion = "latest",
-						defaultCompiler = "remote",
-						enabledAsYouTypeCompilationErrorCheck = true,
-					},
-				},
+				cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
+				filetypes = { "solidity" },
+				root_dir = lspconfig.util.find_git_ancestor,
+				single_file_support = true,
 			})
+
+			-- lspconfig.solidity_ls.setup({
+			-- 	capabilities = capabilities,
+			-- 	root_dir = lspconfig.util.root_pattern("hardhat.config.js", "foundry.toml", ".git"),
+			-- 	settings = {
+			-- 		solidity = {
+			-- 			compileUsingRemoteVersion = "latest",
+			-- 			defaultCompiler = "remote",
+			-- 			enabledAsYouTypeCompilationErrorCheck = true,
+			-- 		},
+			-- 	},
+			-- })
 
 			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
@@ -137,12 +145,23 @@ return {
 				},
 			})
 
-			-- Change the Diagnostic symbols in the sign column (gutter)
-			local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-			for type, icon in pairs(signs) do
-				local hl = "DiagnosticSign" .. type
-				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-			end
+			-- Configure diagnostic signs
+			vim.diagnostic.config({
+				signs = {
+					text = {
+						[vim.diagnostic.severity.ERROR] = "",
+						[vim.diagnostic.severity.WARN] = "",
+						[vim.diagnostic.severity.HINT] = "󰠠",
+						[vim.diagnostic.severity.INFO] = "",
+					},
+					numhl = {
+						[vim.diagnostic.severity.WARN] = "WarningMsg",
+						[vim.diagnostic.severity.ERROR] = "ErrorMsg",
+						[vim.diagnostic.severity.HINT] = "MoreMsg",
+						[vim.diagnostic.severity.INFO] = "InfoMsg",
+					},
+				},
+			})
 
 			-- set keybinds
 			local keymap = vim.keymap

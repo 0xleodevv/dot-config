@@ -126,7 +126,7 @@ return {
 		{
 			"<leader>fs",
 			function()
-				Snacks.picker.grep()
+				Snacks.picker.git_grep()
 			end,
 			desc = "Grep",
 		},

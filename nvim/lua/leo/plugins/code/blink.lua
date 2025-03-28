@@ -1,11 +1,12 @@
 return {
 	"saghen/blink.cmp",
 	dependencies = "rafamadriz/friendly-snippets",
-	version = "*",
+	version = "1.*",
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
 	opts = {
 		keymap = {
+			preset = "none",
 			["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
 			["<C-k>"] = { "select_prev", "fallback" },
 			["<C-j>"] = { "select_next", "fallback" },
@@ -39,7 +40,7 @@ return {
 		sources = {
 			default = { "lsp", "path", "buffer", "snippets" },
 		},
-
+		fuzzy = { implementation = "prefer_rust_with_warning" },
 		enabled = function()
 			return not vim.tbl_contains({ "markdown" }, vim.bo.filetype)
 				and vim.bo.buftype ~= "prompt"

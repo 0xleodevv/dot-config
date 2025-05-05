@@ -1,7 +1,8 @@
 return {
 	"saghen/blink.cmp",
-	dependencies = "rafamadriz/friendly-snippets",
+	dependencies = { "rafamadriz/friendly-snippets" },
 	version = "1.*",
+	event = "InsertEnter",
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
 	opts = {
@@ -29,12 +30,22 @@ return {
 			nerd_font_variant = "mono",
 		},
 		completion = {
-			menu = {
-				auto_show = function(ctx)
-					return ctx.mode ~= "cmdline"
-				end,
-			},
 			documentation = { window = { border = "single" } },
+			menu = {
+				draw = {
+					columns = { { "kind_icon" }, { "label", gap = 1 } },
+					components = {
+						label = {
+							text = function(ctx)
+								return require("colorful-menu").blink_components_text(ctx)
+							end,
+							highlight = function(ctx)
+								return require("colorful-menu").blink_components_highlight(ctx)
+							end,
+						},
+					},
+				},
+			},
 		},
 		signature = { enabled = true, window = { border = "single" } },
 		sources = {

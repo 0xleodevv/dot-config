@@ -1,15 +1,6 @@
 return {
-	"zbirenbaum/copilot.lua",
-	cmd = "Copilot",
-	event = "InsertEnter",
+	"supermaven-inc/supermaven-nvim",
 	config = function()
-		require("copilot").setup({
-			suggestion = {
-				auto_trigger = true,
-				keymap = {
-					accept = "<tab>",
-				},
-			},
-		})
+		require("supermaven-nvim").setup({})
 	end,
 }

@@ -18,78 +18,40 @@ return {
 					IlluminatedWordText = { bg = "sel0" },
 					IlluminatedWordRead = { bg = "sel0" },
 					IlluminatedWordWrite = { bg = "sel0" },
+					CopilotSuggestion = { fg = "palette.gray" },
 				},
 			}
 			require("github-theme").setup({ groups = groups })
-
-			vim.cmd("colorscheme github_dark_default")
 		end,
 	},
 	{
-		"catppuccin/nvim",
+		"AlexvZyl/nordic.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("catppuccin").setup({
-				color_overrides = {
-					frappe = {
-						rosewater = "#E4EDF4",
-						flamingo = "#E4EDF4",
-						pink = "#E4EDF4",
-						mauve = "#ff7973",
-						red = "#79c0ff",
-						maroon = "#ffa34b",
-						peach = "#79c0ff",
-						yellow = "#ffa34b",
-						green = "#a5d6ff",
-						teal = "#94e2d5",
-						sky = "#89dceb",
-						sapphire = "#74c7ec",
-						blue = "#DAA6FF",
-						lavender = "#b4beff",
-						text = "#e6edf3",
-						subtext1 = "#b9c2e1",
-						subtext0 = "#a6adc8",
-						overlay2 = "#9399b2",
-						overlay1 = "#7f849c",
-						overlay0 = "#6c7086",
-						surface2 = "#585b70",
-						surface1 = "#45475a",
-						surface0 = "#313244",
-						base = "#0F111A",
-						mantle = "#181825",
-						crust = "#11111b",
-					},
-					macchiato = {
-						rosewater = "#F5B8AB",
-						flamingo = "#F29D9D",
-						pink = "#AD6FF7",
-						mauve = "#FF8F40",
-						red = "#E66767",
-						maroon = "#EB788B",
-						peach = "#FAB770",
-						yellow = "#FACA64",
-						green = "#70CF67",
-						teal = "#4CD4BD",
-						sky = "#61BDFF",
-						sapphire = "#4BA8FA",
-						blue = "#00BFFF",
-						lavender = "#00BBCC",
-						text = "#C1C9E6",
-						subtext1 = "#A3AAC2",
-						subtext0 = "#8E94AB",
-						overlay2 = "#7D8296",
-						overlay1 = "#676B80",
-						overlay0 = "#464957",
-						surface2 = "#3A3D4A",
-						surface1 = "#2F313D",
-						surface0 = "#1D1E29",
-						base = "#0b0b12",
-						mantle = "#11111a",
-						crust = "#191926",
-					},
-				},
+			require("nordic").setup({
+				on_palette = function(palette)
+					palette.gray0 = "#0F111B"
+					palette.black2 = "#0F111B"
+					palette.black1 = "#0F111B"
+				end,
+				on_highlight = function(highlights, palette)
+					highlights.FloatBorder = { fg = palette.white0 }
+					highlights.MiniIconsGrey = { fg = palette.gray1 }
+					highlights.MiniIconsPurple = { fg = palette.magenta.base }
+					highlights.MiniIconsBlue = { fg = palette.blue0 }
+					highlights.MiniIconsAzure = { fg = palette.blue1 }
+					highlights.MiniIconsCyan = { fg = palette.cyan.base }
+					highlights.MiniIconsGreen = { fg = palette.green.base }
+					highlights.MiniIconsYellow = { fg = palette.yellow.base }
+					highlights.MiniIconsOrange = { fg = palette.orange.base }
+					highlights.MiniIconsRed = { fg = palette.red.base }
+					highlights.CopilotSuggestion = { fg = palette.gray2 }
+					highlights.MatchParen = { fg = palette.orange.base, bold = true }
+					highlights["@injection.content.solidity"] = { fg = palette.red.base }
+				end,
 			})
+			require("nordic").load()
 		end,
 	},
 }

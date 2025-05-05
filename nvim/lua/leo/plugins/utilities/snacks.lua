@@ -8,7 +8,11 @@ return {
 		indent = { enabled = true, indent = { char = "┊" }, scope = {
 			char = "┊",
 		} },
-		picker = {},
+		picker = {
+			sources = {
+				explorer = {},
+			},
+		},
 		input = {},
 		zen = {
 			win = {
@@ -35,7 +39,7 @@ return {
 						action = "<cmd>:cd ~/.config/tmux | :edit tmux.conf <CR>",
 					},
 					{ key = "u", icon = "󰂖   Update plugins", action = "<cmd>lua require('lazy').sync()<CR>" },
-					{ key = "q", icon = "   Quit NVIM", action = ":qa<CR>" },
+					{ key = "q", icon = "   Quit NVIM", action = "<cmd>:qa<CR>" },
 				},
 				header = [[
      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⢾⢿⢟⢝⠻⢓⠲⢤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -77,6 +81,13 @@ return {
 				Snacks.zen()
 			end,
 			desc = "Zen Mode",
+		},
+		{
+			"<leader>ee",
+			function()
+				Snacks.explorer()
+			end,
+			desc = "File Explorer",
 		},
 		{
 			"<leader>fg",
@@ -176,7 +187,24 @@ return {
 		{
 			"<leader>fm",
 			function()
-				Snacks.picker.lsp_symbols({ layout = { preset = "vscode", preview = "main" } })
+				Snacks.picker.lsp_symbols({
+					layout = { preset = "vscode", preview = "main" },
+					filter = {
+						go = {
+							"Class",
+							"Constructor",
+							"Enum",
+							"Function",
+							"Interface",
+							"Method",
+							"Module",
+							"Namespace",
+							"Property",
+							"Struct",
+							"Trait",
+						},
+					},
+				})
 			end,
 			desc = "LSP Symbols",
 		},

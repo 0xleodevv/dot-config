@@ -14,7 +14,7 @@ return {
 		},
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "ts_ls", "rust_analyzer", "lua_ls", "solidity_ls" },
+				ensure_installed = { "ts_ls", "lua_ls" },
 			})
 		end,
 	},
@@ -66,84 +66,50 @@ return {
 
 			local lspconfig = require("lspconfig")
 
-			lspconfig.typos_lsp.setup({
-				-- Logging level of the language server. Logs appear in :LspLog. Defaults to error.
-				cmd_env = { RUST_LOG = "error" },
-				init_options = {
-					-- Custom config. Used together with a config file found in the workspace or its parents,
-					-- taking precedence for settings declared in both.
-					-- Equivalent to the typos `--config` cli argument.
-					config = "~/code/typos-lsp/crates/typos-lsp/tests/typos.toml",
-					diagnosticSeverity = "Warning",
+			local servers = {
+				svelte = true,
+				jsonls = true,
+				emmet_language_server = true,
+				tailwindcss = true,
+				ts_ls = true,
+				html = true,
+				gopls = true,
+				typos_lsp = {
+					cmd_env = { RUST_LOG = "error" },
+					init_options = {
+						config = "~/code/typos-lsp/crates/typos-lsp/tests/typos.toml",
+						diagnosticSeverity = "Warning",
+					},
 				},
-				-- filetypes = { "markdown", "md", "solidity" },
-			})
-
-			lspconfig.svelte.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.jsonls.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.rust_analyzer.setup({
-				capabilities = capabilities,
-				settings = {
-					["rust-analyzer"] = {
-						cargo = {
-							features = { "std", "e2e" },
+				rust_analyzer = true,
+				lua_ls = {
+					settings = {
+						Lua = {
+							diagnostics = {
+								globals = { "vim", "Snacks" },
+							},
 						},
 					},
 				},
-			})
-
-			lspconfig.emmet_language_server.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.solidity_ls_nomicfoundation.setup({
-				capabilities = capabilities,
-				cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
-				filetypes = { "solidity" },
-				root_dir = lspconfig.util.find_git_ancestor,
-				single_file_support = true,
-			})
-
-			-- lspconfig.solidity_ls.setup({
-			-- 	capabilities = capabilities,
-			-- 	root_dir = lspconfig.util.root_pattern("hardhat.config.js", "foundry.toml", ".git"),
-			-- 	settings = {
-			-- 		solidity = {
-			-- 			compileUsingRemoteVersion = "latest",
-			-- 			defaultCompiler = "remote",
-			-- 			enabledAsYouTypeCompilationErrorCheck = true,
-			-- 		},
-			-- 	},
-			-- })
-
-			lspconfig.tailwindcss.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.ts_ls.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.html.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-				settings = {
-					Lua = {
-						diagnostics = {
-							globals = { "vim", "Snacks" },
-						},
-					},
+				solidity_ls_nomicfoundation = {
+					cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
+					filetypes = { "solidity" },
+					root_dir = lspconfig.util.find_git_ancestor,
+					single_file_support = true,
 				},
-			})
+			}
+
+			for name, config in pairs(servers) do
+				if config then
+					local opts = { capabilities = capabilities }
+					if type(config) == "table" then
+						for k, v in pairs(config) do
+							opts[k] = v
+						end
+					end
+					lspconfig[name].setup(opts)
+				end
+			end
 
 			-- Configure diagnostic signs
 			vim.diagnostic.config({

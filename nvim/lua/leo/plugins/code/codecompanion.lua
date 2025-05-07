@@ -12,7 +12,7 @@ return {
 				},
 			},
 		})
-		vim.keymap.set("n", "<leader>aa", ":CodeCompanionChat Toggle <CR>")
+		vim.keymap.set({ "v", "n" }, "<leader>aa", ":CodeCompanionChat Toggle <CR>")
 		vim.keymap.set("v", "<leader>ai", ":CodeCompanion <CR>")
 	end,
 }

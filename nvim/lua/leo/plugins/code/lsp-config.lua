@@ -137,7 +137,11 @@ return {
 			keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
 			keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "See available code actions" })
 			keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Smart rename" })
-			keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show documentation for what is under cursor" })
+			keymap.set("n", "K", function()
+				vim.lsp.buf.hover({
+					border = "rounded",
+				})
+			end, { desc = "Show documentation for what is under cursor" })
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", { desc = "Restart LSP" })
 		end,
 	},

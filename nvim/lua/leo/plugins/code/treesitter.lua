@@ -9,7 +9,6 @@ return {
 		-- import nvim-treesitter plugin
 		local treesitter = require("nvim-treesitter.configs")
 		require("nvim-ts-autotag").setup({})
-		vim.treesitter.language.register("markdown", "octo")
 		-- configure treesitter
 		treesitter.setup({
 			-- enable syntax highlighting

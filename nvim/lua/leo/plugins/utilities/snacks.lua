@@ -8,11 +8,7 @@ return {
 		indent = { enabled = true, indent = { char = "┊" }, scope = {
 			char = "┊",
 		} },
-		picker = {
-			sources = {
-				explorer = {},
-			},
-		},
+		picker = {},
 		input = {},
 		zen = {
 			win = {
@@ -81,13 +77,6 @@ return {
 				Snacks.zen()
 			end,
 			desc = "Zen Mode",
-		},
-		{
-			"<leader>ee",
-			function()
-				Snacks.explorer()
-			end,
-			desc = "File Explorer",
 		},
 		{
 			"<leader>fg",

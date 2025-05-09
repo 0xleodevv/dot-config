@@ -1,18 +1,18 @@
 return {
 	"olimorris/codecompanion.nvim",
-	opts = {},
-	config = function()
-		require("codecompanion").setup({
-			strategies = {
-				chat = {
-					adapter = "anthropic",
-				},
-				inline = {
-					adapter = "anthropic",
-				},
+	event = "VeryLazy",
+	opts = {
+		strategies = {
+			chat = {
+				adapter = "anthropic",
 			},
-		})
-		vim.keymap.set({ "v", "n" }, "<leader>aa", ":CodeCompanionChat Toggle <CR>")
-		vim.keymap.set("v", "<leader>ai", ":CodeCompanion <CR>")
-	end,
+			inline = {
+				adapter = "anthropic",
+			},
+		},
+	},
+	keys = {
+		{ "<leader>aa", mode = { "v", "n" }, "<cmd>CodeCompanionChat Toggle<cr>" },
+		{ "<leader>ai", mode = { "v" }, "<cmd>CodeCompanion<cr>" },
+	},
 }

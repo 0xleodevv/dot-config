@@ -6,7 +6,7 @@ return {
 			theme = "auto",
 			icons_enabled = true,
 			component_separators = { left = "", right = "" },
-			disabled_filetypes = { statusline = { "snacks_dashboard" } },
+			disabled_filetypes = { statusline = { "snacks_dashboard", "Avante" } },
 			ignore_focus = {
 				"dapui_watches",
 				"dapui_breakpoints",
@@ -14,6 +14,8 @@ return {
 				"dapui_console",
 				"dapui_stacks",
 				"dap-repl",
+				"AvanteInput",
+				"AvanteSelectedFiles",
 			},
 			always_divide_middle = true,
 			globalstatus = false,

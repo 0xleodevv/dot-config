@@ -3,8 +3,6 @@ return {
 	dependencies = { "rafamadriz/friendly-snippets" },
 	version = "1.*",
 	event = "InsertEnter",
-	---@module 'blink.cmp'
-	---@type blink.cmp.Config
 	opts = {
 		keymap = {
 			preset = "none",
@@ -55,6 +53,7 @@ return {
 		enabled = function()
 			return not vim.tbl_contains({ "markdown" }, vim.bo.filetype)
 				and vim.bo.buftype ~= "prompt"
+				and vim.bo.filetype ~= "AvanteInput"
 				and vim.b.completion ~= false
 		end,
 	},

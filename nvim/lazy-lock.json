@@ -1,8 +1,8 @@
 {
+  "avante.nvim": { "branch": "main", "commit": "8f96d4319df662c8069ce82307d03bb1da2d0554" },
   "blink.cmp": { "branch": "main", "commit": "4f38ce99a472932d5776337f08f7a8180f1f571a" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
   "clasp.nvim": { "branch": "master", "commit": "25442429aae1b1de0627f358740613f77ec57410" },
-  "codecompanion.nvim": { "branch": "main", "commit": "efefb72448afe9ad1207399740689593fe7c866d" },
   "colorful-menu.nvim": { "branch": "master", "commit": "c50d7268bcbbdca4d77b5b8146a0986a42360bd0" },
   "conform.nvim": { "branch": "master", "commit": "374aaf384e2e841607b8e2fe63fa3ad01d111c91" },
   "dropbar.nvim": { "branch": "master", "commit": "0b822e1327013a6554b4fe90f7390e5fb01a8e5e" },

@@ -3,7 +3,7 @@ return {
 		"MeanderingProgrammer/render-markdown.nvim",
 		dependencies = { "nvim-treesitter/nvim-treesitter" }, -- if you use the mini.nvim suite
 		opts = {},
-		ft = { "markdown", "codecompanion" },
+		ft = { "markdown", "codecompanion", "Avante" },
 	},
 	{
 		"iamcco/markdown-preview.nvim",

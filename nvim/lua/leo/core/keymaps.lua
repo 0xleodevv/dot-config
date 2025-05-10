@@ -8,10 +8,6 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- leader y yanks to the system clipboard
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
-
 -- replace the current word
 vim.keymap.set("n", "<leader>R", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gIc<Left><Left><Left><Left>]])
 
@@ -30,3 +26,8 @@ vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current t
 vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+vim.keymap.set("n", "<Up>", "<cmd>resize +3<cr>", { desc = "Increase Window Height" })
+vim.keymap.set("n", "<Down>", "<cmd>resize -3<cr>", { desc = "Decrease Window Height" })
+vim.keymap.set("n", "<Right>", "<cmd>vertical resize +3<cr>", { desc = "Increase Window Width" })
+vim.keymap.set("n", "<Left>", "<cmd>vertical resize -3<cr>", { desc = "Decrease Window Width" })

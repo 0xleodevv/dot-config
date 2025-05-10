@@ -30,6 +30,8 @@ return {
 		completion = {
 			documentation = { window = { border = "single" } },
 			menu = {
+				border = "rounded",
+				scrollbar = false,
 				draw = {
 					columns = { { "kind_icon" }, { "label", gap = 1 } },
 					components = {
@@ -45,7 +47,7 @@ return {
 				},
 			},
 		},
-		signature = { enabled = true, window = { border = "single" } },
+		signature = { enabled = true, window = { border = "rounded" } },
 		sources = {
 			default = { "lsp", "path", "buffer", "snippets" },
 		},
@@ -53,6 +55,7 @@ return {
 		enabled = function()
 			return not vim.tbl_contains({ "markdown" }, vim.bo.filetype)
 				and vim.bo.buftype ~= "prompt"
+				and vim.bo.filetype ~= "AvantePromptInput"
 				and vim.bo.filetype ~= "AvanteInput"
 				and vim.b.completion ~= false
 		end,

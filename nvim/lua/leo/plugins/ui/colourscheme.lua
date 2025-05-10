@@ -49,6 +49,7 @@ return {
 					highlights.CopilotSuggestion = { fg = palette.gray2 }
 					highlights.MatchParen = { fg = palette.orange.base, bold = true }
 					highlights["@injection.content.solidity"] = { fg = palette.red.base }
+					highlights.AvanteSidebarWinSeparator = { fg = palette.white0 }
 				end,
 			})
 			require("nordic").load()

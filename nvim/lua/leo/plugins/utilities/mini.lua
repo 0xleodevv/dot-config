@@ -1,11 +1,13 @@
 return {
 	{
 		"folke/ts-comments.nvim",
+		event = "BufEnter",
 		config = true,
 	},
 	{
 		"echasnovski/mini.nvim",
 		version = "*",
+		event = "VeryLazy",
 		config = function()
 			-- Each mini module as separate setup call
 			require("mini.surround").setup()

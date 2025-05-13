@@ -28,9 +28,8 @@ return {
 			nerd_font_variant = "mono",
 		},
 		completion = {
-			documentation = { window = { border = "single" } },
+			documentation = { window = { border = "rounded" } },
 			menu = {
-				border = "rounded",
 				scrollbar = false,
 				draw = {
 					columns = { { "kind_icon" }, { "label", gap = 1 } },

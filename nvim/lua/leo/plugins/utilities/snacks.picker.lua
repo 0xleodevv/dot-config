@@ -31,12 +31,16 @@ return {
 		{ "<leader>fd", function() Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
 		--stylua: ignore
 		{ "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
+        --stylua: ignore
+        { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
 		--stylua: ignore
 		{ "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
 		--stylua: ignore
 		{ "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
 		--stylua: ignore
 		{ "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+        --stylua: ignore
+        { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
 		{
 			"<leader>fm",
 			function()

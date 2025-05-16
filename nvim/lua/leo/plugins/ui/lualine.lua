@@ -16,6 +16,7 @@ return {
 				"dap-repl",
 				"AvanteInput",
 				"AvanteSelectedFiles",
+				"neo-tree",
 			},
 			always_divide_middle = true,
 			globalstatus = false,

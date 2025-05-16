@@ -1,6 +1,6 @@
 return {
 	"brenoprata10/nvim-highlight-colors",
-	event = "BufEnter",
+	event = "BufRead",
 	opts = {
 		enable_tailwind = true,
 		exclude_filetypes = { "cairo", "js", "ts", "json", "md", "toml", "sol" },

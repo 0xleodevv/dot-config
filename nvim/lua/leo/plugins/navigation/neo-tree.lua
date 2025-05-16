@@ -1,11 +1,10 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	dependencies = {
-		"echasnovski/mini.icons",
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
 	},
-	event = "VeryLazy",
+	cmd = { "Neotree" },
 	keys = {
 		{ "<leader>ef", ":Neotree filesystem reveal float<CR>", silent = true, desc = "Float File Explorer" },
 		{ "<leader>ee", ":Neotree filesystem reveal toggle left<CR>", silent = true, desc = "Left File Explorer" },

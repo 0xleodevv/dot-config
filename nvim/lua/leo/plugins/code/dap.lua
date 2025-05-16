@@ -20,6 +20,9 @@ return {
 		local dap, dapui = require("dap"), require("dapui")
 		require("dap-go").setup()
 		require("dapui").setup()
+
+		local sign = vim.fn.sign_define
+		sign("DapStopped", { text = "", texthl = "DapStopped", linehl = "DapStopped", numhl = "DapStopped" })
 		dap.listeners.before.attach.dapui_config = function()
 			dapui.open()
 		end

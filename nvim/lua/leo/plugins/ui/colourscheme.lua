@@ -50,6 +50,7 @@ return {
 					highlights.MatchParen = { fg = palette.orange.base, bold = true }
 					highlights["@injection.content.solidity"] = { fg = palette.red.base }
 					highlights.AvanteSidebarWinSeparator = { fg = palette.white0 }
+					highlights.DapStopped = { link = "GitSignsAdd" }
 				end,
 			})
 			require("nordic").load()

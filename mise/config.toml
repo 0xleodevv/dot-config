@@ -1,6 +1,0 @@
-[tools]
-bun = "latest"
-go = "1.21"
-node = "20"
-rust = "latest"
-scarb = "2.9.2"

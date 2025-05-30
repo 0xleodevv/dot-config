@@ -35,6 +35,10 @@ return {
 					palette.black2 = "#0F111B"
 					palette.black1 = "#0F111B"
 				end,
+				after_palette = function(palette)
+					local U = require("nordic.utils")
+					palette.bg_dap = U.blend(palette.green.base, palette.bg, 0.30)
+				end,
 				on_highlight = function(highlights, palette)
 					highlights.FloatBorder = { fg = palette.white0 }
 					highlights.MiniIconsGrey = { fg = palette.gray1 }
@@ -50,7 +54,10 @@ return {
 					highlights.MatchParen = { fg = palette.orange.base, bold = true }
 					highlights["@injection.content.solidity"] = { fg = palette.red.base }
 					highlights.AvanteSidebarWinSeparator = { fg = palette.white0 }
-					highlights.DapStopped = { link = "GitSignsAdd" }
+					highlights.DapStopped = {
+						bg = palette.bg_dap,
+					}
+					highlights.Field = { fg = palette.magenta.base }
 				end,
 			})
 			require("nordic").load()

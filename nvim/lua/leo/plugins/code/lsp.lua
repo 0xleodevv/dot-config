@@ -4,11 +4,12 @@ return {
 	},
 	{
 		"mason-org/mason.nvim",
+		event = "VeryLazy",
 		opts = {},
 	},
 	{
 		"mason-org/mason-lspconfig.nvim",
-		event = "BufReadPost",
+		event = "VeryLazy",
 		dependencies = {
 			{ "zeioth/garbage-day.nvim", event = "VeryLazy" },
 		},

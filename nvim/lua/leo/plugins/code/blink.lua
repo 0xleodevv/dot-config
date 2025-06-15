@@ -31,6 +31,7 @@ return {
 			documentation = { window = { border = "rounded" } },
 			menu = {
 				scrollbar = false,
+				border = "rounded",
 				draw = {
 					columns = { { "kind_icon" }, { "label", gap = 1 } },
 					components = {
@@ -56,6 +57,7 @@ return {
 				and vim.bo.buftype ~= "prompt"
 				and vim.bo.filetype ~= "AvantePromptInput"
 				and vim.bo.filetype ~= "AvanteInput"
+				and vim.bo.filetype ~= "grug-far"
 				and vim.b.completion ~= false
 		end,
 	},

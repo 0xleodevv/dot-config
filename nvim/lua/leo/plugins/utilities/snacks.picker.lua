@@ -7,14 +7,14 @@ return {
 	},
 	keys = {
 		{
-			"<leader>fg",
+			"<leader>ff",
 			function()
 				Snacks.picker.git_files({ untracked = true, submodules = false })
 			end,
 			desc = "Find Git Files",
 		},
 		--stylua: ignore
-		{ "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
+		{ "<leader>fg", function() Snacks.picker.files() end, desc = "Find All Files" },
 		--stylua: ignore
 		{ "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
 		--stylua: ignore

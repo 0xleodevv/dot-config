@@ -31,3 +31,6 @@ vim.keymap.set("n", "<Up>", "<cmd>resize +3<cr>", { desc = "Increase Window Heig
 vim.keymap.set("n", "<Down>", "<cmd>resize -3<cr>", { desc = "Decrease Window Height" })
 vim.keymap.set("n", "<Right>", "<cmd>vertical resize +3<cr>", { desc = "Increase Window Width" })
 vim.keymap.set("n", "<Left>", "<cmd>vertical resize -3<cr>", { desc = "Decrease Window Width" })
+
+vim.keymap.set("x", "/", "<C-\\><C-n>`</\\%V", { desc = "Search forward within visual selection" })
+vim.keymap.set("x", "?", "<C-\\><C-n>`>?\\%V", { desc = "Search backward within visual selection" })

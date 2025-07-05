@@ -17,7 +17,6 @@ return {
 			require("mini.bracketed").setup()
 			require("mini.cursorword").setup()
 			require("mini.icons").mock_nvim_web_devicons()
-			require("mini.notify").setup()
 		end,
 	},
 }

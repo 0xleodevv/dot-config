@@ -3,18 +3,22 @@ return {
 	priority = 1000,
 	lazy = false,
 	opts = {
-		picker = {},
+		picker = {
+			matcher = {
+				cwd_bonus = true, -- give bonus for matching files in the cwd
+			},
+		},
 	},
 	keys = {
 		{
-			"<leader>ff",
+			"<leader>fg",
 			function()
 				Snacks.picker.git_files({ untracked = true, submodules = false })
 			end,
 			desc = "Find Git Files",
 		},
 		--stylua: ignore
-		{ "<leader>fg", function() Snacks.picker.files() end, desc = "Find All Files" },
+		{ "<leader>ff", function() Snacks.picker.files() end, desc = "Find All Files" },
 		--stylua: ignore
 		{ "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
 		--stylua: ignore
@@ -24,7 +28,7 @@ return {
 		--stylua: ignore
 		{ "<leader>ft", function() Snacks.picker.todo_comments() end, desc = "Todo" },
 		--stylua: ignore
-		{ "<leader>fs", function() Snacks.picker.git_grep() end, desc = "Grep" },
+		{ "<leader>fs", function() Snacks.picker.grep() end, desc = "Grep" },
 		--stylua: ignore
 		{ "<leader>fD", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
 		--stylua: ignore

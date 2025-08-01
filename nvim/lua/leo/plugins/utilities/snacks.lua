@@ -4,7 +4,7 @@ return {
 	lazy = false,
 	opts = {
 		lazygit = { enabled = true },
-		bigfile = { enabled = true },
+		-- bigfile = { enabled = true },
 		indent = { enabled = true, indent = { char = "┊" }, scope = {
 			char = "┊",
 		} },

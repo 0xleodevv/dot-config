@@ -4,11 +4,44 @@ return {
 	lazy = false,
 	opts = {
 		picker = {
+			sources = {
+				explorer = {},
+			},
 			matcher = {
 				cwd_bonus = true, -- give bonus for matching files in the cwd
 			},
 		},
 	},
+
+	config = function(_, opts)
+		-- Setup with the opts (this preserves settings from all files)
+		require("snacks").setup(opts)
+
+		-- Add your autocommand after setup
+		vim.api.nvim_create_autocmd("QuitPre", {
+			callback = function()
+				local snacks_windows = {}
+				local floating_windows = {}
+				local windows = vim.api.nvim_list_wins()
+				for _, w in ipairs(windows) do
+					local filetype = vim.api.nvim_get_option_value("filetype", { buf = vim.api.nvim_win_get_buf(w) })
+					if filetype:match("snacks_") ~= nil then
+						table.insert(snacks_windows, w)
+					elseif vim.api.nvim_win_get_config(w).relative ~= "" then
+						table.insert(floating_windows, w)
+					end
+				end
+				if
+					1 == #windows - #floating_windows - #snacks_windows
+					and vim.api.nvim_win_get_config(vim.api.nvim_get_current_win()).relative == ""
+				then
+					for _, w in ipairs(snacks_windows) do
+						vim.api.nvim_win_close(w, true)
+					end
+				end
+			end,
+		})
+	end,
 	keys = {
 		{
 			"<leader>fg",
@@ -16,6 +49,13 @@ return {
 				Snacks.picker.git_files({ untracked = true, submodules = false })
 			end,
 			desc = "Find Git Files",
+		},
+		{
+			"<leader>ee",
+			function()
+				Snacks.explorer()
+			end,
+			desc = "File Explorer",
 		},
 		--stylua: ignore
 		{ "<leader>ff", function() Snacks.picker.files() end, desc = "Find All Files" },

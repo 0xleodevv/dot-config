@@ -5,6 +5,7 @@ return {
 	opts = {
 		zen = {
 			win = {
+				width = 130,
 				backdrop = {
 					transparent = false,
 				},

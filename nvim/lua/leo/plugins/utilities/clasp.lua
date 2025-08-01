@@ -1,6 +1,5 @@
 return {
 	"xzbdmw/clasp.nvim",
-	lazy = false,
 	priority = 1000,
 	config = function()
 		require("clasp").setup({

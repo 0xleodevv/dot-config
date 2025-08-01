@@ -1,5 +1,6 @@
 return {
 	{ "akinsho/git-conflict.nvim", version = "*", config = true },
+	{ "https://github.com/sindrets/diffview.nvim", opts = {} },
 	{
 		"lewis6991/gitsigns.nvim",
 		event = { "BufReadPre", "BufNewFile" },

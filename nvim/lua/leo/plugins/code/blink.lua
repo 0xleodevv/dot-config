@@ -55,9 +55,8 @@ return {
 		enabled = function()
 			return not vim.tbl_contains({ "markdown" }, vim.bo.filetype)
 				and vim.bo.buftype ~= "prompt"
-				and vim.bo.filetype ~= "AvantePromptInput"
-				and vim.bo.filetype ~= "AvanteInput"
 				and vim.bo.filetype ~= "grug-far"
+				and vim.bo.filetype ~= "oil"
 				and vim.b.completion ~= false
 		end,
 	},

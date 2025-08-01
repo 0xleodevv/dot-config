@@ -8,6 +8,12 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
+-- Save current buffer
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
+
+-- Save all buffers and quit
+vim.keymap.set("n", "<leader>q", "<cmd>wqa<cr>", { desc = "Save all and quit" })
+
 -- replace the current word
 vim.keymap.set("n", "<leader>R", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gIc<Left><Left><Left><Left>]])
 

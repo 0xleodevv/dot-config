@@ -1,16 +1,18 @@
-# theme = "rose-pine"
 theme = "MaterialOcean"
-# background-opacity = 0.95
-# background-blur = true
+# theme = "GruvboxDarkHard"
 cursor-color = "#FFFFFF"
 
 
 # Font
-font-family = "JetBrainsMono NFM Medium"
-# font-family-italic = "IosevkaTerm NFM Medium"
-# font-family-bold-italic= "IosevkaTerm NFM SemiBold Oblique"
+# font-family = "JetBrainsMono NFM Medium"
+font-family = "JetBrainsMono NFM"
+# font-family = Liga SFMono Nerd Font
 font-size = 12
-# adjust-cell-height = 2
+adjust-cell-height = 1
+
+# background-opacity=0.9
+# background-blur=true
+
 
 cursor-style = underline
 cursor-style-blink = true

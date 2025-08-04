@@ -7,7 +7,7 @@ return {
 		lint.linters_by_ft = {
 			javascriptreact = { "eslint_d" },
 			typescriptreact = { "eslint_d" },
-			python = { "pylint" },
+			python = { "ruff" },
 			solidity = { "solhint" },
 		}
 		vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter" }, {

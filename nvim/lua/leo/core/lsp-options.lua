@@ -22,7 +22,7 @@ local keymap = vim.keymap
 
 -- general lsp keybinds
 
-keymap.set("n", "<space>q", function()
+keymap.set("n", "q", function()
 	vim.diagnostic.open_float({ border = "rounded" })
 end, { desc = "open floating diagnostics" })
 

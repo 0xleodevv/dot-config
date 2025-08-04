@@ -16,7 +16,7 @@ return {
 				json = { "prettier" },
 				yaml = { "prettier" },
 				lua = { "stylua" },
-				python = { "isort", "black" },
+				python = { "ruff" },
 			},
 
 			formatters = {

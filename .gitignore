@@ -6,3 +6,5 @@ mise/
 .DS_Store
 github-copilot
 configstore/
+uv
+wireshark

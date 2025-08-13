@@ -16,7 +16,7 @@ return {
 		opts = {
 			ensure_installed = {
 				"lua_ls",
-				"ts_ls",
+				"vtsls",
 				"emmet_language_server",
 				"rust_analyzer",
 				"gopls",

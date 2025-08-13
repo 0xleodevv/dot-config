@@ -13,6 +13,9 @@ return {
 			["<BS>"] = { "actions.parent", mode = "n" },
 			["-"] = false,
 		},
+		view_options = {
+			show_hidden = true,
+		},
 	},
 	lazy = false,
 	keys = {

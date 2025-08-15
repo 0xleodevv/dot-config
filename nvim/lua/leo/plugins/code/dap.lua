@@ -6,23 +6,25 @@ return {
 		"leoluz/nvim-dap-go",
 		"nvim-neotest/nvim-nio",
 	},
-	keys = {
-        --stylua: ignore
-        { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
-        --stylua: ignore
-        { "<leader>dc", function() require("dap").continue() end, desc = "Continue" },
-        --stylua: ignore
-        { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
-        --stylua: ignore
-        { "<leader>dT", function() require("dap").terminate() end, desc = "Terminate" },
-	},
+    -- stylua: ignore
+    keys = {
+      { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
+      { "<leader>dc", function() require("dap").continue() end, desc = "Run/Continue" },
+      { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
+      { "<leader>di", function() require("dap").step_into() end, desc = "Step Into" },
+      { "<leader>dj", function() require("dap").down() end, desc = "Down" },
+      { "<leader>dk", function() require("dap").up() end, desc = "Up" },
+      { "<leader>do", function() require("dap").step_out() end, desc = "Step Out" },
+      { "<leader>dO", function() require("dap").step_over() end, desc = "Step Over" },
+      { "<leader>dP", function() require("dap").pause() end, desc = "Pause" },
+      { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
+      { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
+    },
 	config = function()
 		local dap, dapui = require("dap"), require("dapui")
 		require("dap-go").setup()
 		require("dapui").setup()
 
-		local sign = vim.fn.sign_define
-		sign("DapStopped", { text = "", texthl = "DapStopped", linehl = "DapStopped", numhl = "DapStopped" })
 		dap.listeners.before.attach.dapui_config = function()
 			dapui.open()
 		end
@@ -35,5 +37,12 @@ return {
 		dap.listeners.before.event_exited.dapui_config = function()
 			dapui.close()
 		end
+
+		require("dap").set_log_level("TRACE")
+
+		local sign = vim.fn.sign_define
+		sign("DapStopped", { text = "", texthl = "DapStopped", linehl = "DapStopped", numhl = "DapStopped" })
+		sign("DapBreakpoint", { text = "", texthl = "DiagnosticInfo" })
+		sign("DapBreakpointRejected", { text = "", texthl = "DiagnosticError" })
 	end,
 }

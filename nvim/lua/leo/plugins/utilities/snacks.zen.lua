@@ -15,13 +15,8 @@ return {
 			},
 		},
 	},
+    --stylua: ignore
 	keys = {
-		{
-			"<leader>z",
-			function()
-				Snacks.zen()
-			end,
-			desc = "Zen Mode",
-		},
+		{ "<leader>z", function() Snacks.zen() end, desc = "Zen Mode" },
 	},
 }

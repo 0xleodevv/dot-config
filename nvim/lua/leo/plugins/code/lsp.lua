@@ -18,7 +18,7 @@ return {
 				"lua_ls",
 				"vtsls",
 				"emmet_language_server",
-				"rust_analyzer",
+				-- "rust_analyzer",
 				"gopls",
 				"typos_lsp",
 				"tailwindcss",

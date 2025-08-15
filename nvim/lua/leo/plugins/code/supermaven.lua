@@ -16,6 +16,9 @@ return {
 			keymap = {
 				accept = "<Tab>",
 			},
+			suggestion = {
+				auto_trigger = true,
+			},
 		},
 		panel = { enabled = false },
 		filetypes = {

@@ -7,7 +7,3 @@ end, { silent = true, buffer = bufnr })
 vim.keymap.set("n", "Q", function()
 	vim.cmd.RustLsp({ "renderDiagnostic", "current" })
 end, { silent = true, buffer = bufnr })
-
-vim.keymap.set("n", "<leader>dr", function()
-	vim.cmd.RustLsp("debuggables")
-end, { desc = "Rust Debuggables", buffer = bufnr })

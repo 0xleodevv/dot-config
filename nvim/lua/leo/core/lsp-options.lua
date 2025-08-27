@@ -17,10 +17,7 @@ vim.diagnostic.config({
 	},
 })
 
--- set keybinds
 local keymap = vim.keymap
-
--- general lsp keybinds
 
 keymap.set("n", "q", function()
 	vim.diagnostic.open_float({ border = "rounded" })

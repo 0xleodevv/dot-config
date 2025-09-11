@@ -38,8 +38,6 @@ return {
 			dapui.close()
 		end
 
-		require("dap").set_log_level("TRACE")
-
 		local sign = vim.fn.sign_define
 		sign("DapStopped", { text = "", texthl = "DapStopped", linehl = "DapStopped", numhl = "DapStopped" })
 		sign("DapBreakpoint", { text = "", texthl = "DiagnosticInfo" })

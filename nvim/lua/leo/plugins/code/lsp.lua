@@ -11,7 +11,7 @@ return {
 		"mason-org/mason-lspconfig.nvim",
 		event = "VeryLazy",
 		dependencies = {
-			{ "zeioth/garbage-day.nvim", event = "VeryLazy" },
+			{ "zeioth/garbage-day.nvim", event = "VeryLazy", opts = {} },
 		},
 		opts = {
 			ensure_installed = {

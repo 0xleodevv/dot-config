@@ -17,8 +17,8 @@ return {
 				yaml = { "prettier" },
 				lua = { "stylua" },
 				python = { "ruff" },
+				rust = { "rustfmt" },
 			},
-
 			formatters = {
 				forge_fmt = {
 					command = "/Users/leopat/.foundry/bin/forge",

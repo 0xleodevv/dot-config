@@ -17,7 +17,6 @@ return {
 				yaml = { "prettier" },
 				lua = { "stylua" },
 				python = { "ruff" },
-				rust = { "rustfmt" },
 			},
 			formatters = {
 				forge_fmt = {

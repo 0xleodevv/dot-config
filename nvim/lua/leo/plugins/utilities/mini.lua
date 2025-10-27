@@ -1,9 +1,9 @@
 return {
-	{
-		"folke/ts-comments.nvim",
-		event = "BufEnter",
-		config = true,
-	},
+	-- {
+	-- 	"folke/ts-comments.nvim",
+	-- 	event = "BufEnter",
+	-- 	config = true,
+	-- },
 	{
 		"nvim-mini/mini.nvim",
 		version = "*",

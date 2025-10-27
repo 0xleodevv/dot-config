@@ -1,19 +1,27 @@
 return {
-	"supermaven-inc/supermaven-nvim",
-	event = "InsertEnter",
-	opts = {
-		condition = function()
-			local bufname = vim.api.nvim_buf_get_name(0)
-			local buftype = vim.bo.buftype
+	-- {
+	-- 	"sourcegraph/amp.nvim",
+	-- 	branch = "main",
+	-- 	lazy = false,
+	-- 	opts = { auto_start = true, log_level = "info" },
+	-- },
+	{
+		"supermaven-inc/supermaven-nvim",
+		event = "InsertEnter",
+		opts = {
+			condition = function()
+				local bufname = vim.api.nvim_buf_get_name(0)
+				local buftype = vim.bo.buftype
 
-			if bufname == "" or buftype == "nofile" or buftype == "prompt" then
+				if bufname == "" or buftype == "nofile" or buftype == "prompt" then
+					return false
+				end
+
 				return true
-			end
-
-			return false
-		end,
-	},
-	keys = {
-		{ "<leader>st", "<cmd>SupermavenToggle<cr>", desc = "Toggle SuperMaven" },
+			end,
+		},
+		keys = {
+			{ "<leader>st", "<cmd>SupermavenToggle<cr>", desc = "Toggle SuperMaven" },
+		},
 	},
 }

@@ -1,4 +1,32 @@
 return {
+	-- {
+	-- 	dir = "~/Documents/projects/sunrise/",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {}
+	-- },
+	{
+		"datsfilipe/vesper.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- vim.cmd.colorscheme("vesper")
+		end,
+	},
+	{
+		"Shatur/neovim-ayu",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("ayu").setup({
+				mirage = false, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
+				terminal = true, -- Set to `false` to let terminal manage its own colors.
+				overrides = {}, -- A dictionary of group names, each associated with a dictionary of parameters (`bg`, `fg`, `sp` and `style`) and colors in hex.
+			})
+
+			vim.cmd.colorscheme("ayu")
+		end,
+	},
 	{
 		"AlexvZyl/nordic.nvim",
 		lazy = false,
@@ -41,7 +69,7 @@ return {
 					highlights.Field = { fg = palette.magenta.base }
 				end,
 			})
-			require("nordic").load()
+			-- require("nordic").load()
 		end,
 	},
 }

@@ -19,7 +19,7 @@ vim.diagnostic.config({
 
 local keymap = vim.keymap
 
-keymap.set("n", "q", function()
+keymap.set("n", "Q", function()
 	vim.diagnostic.open_float({ border = "rounded" })
 end, { desc = "open floating diagnostics" })
 

@@ -18,6 +18,11 @@ return {
 		priority = 1000,
 		lazy = false,
 		opts = {
+			previewers = {
+				diff = {
+					cmd = { "delta" }, -- example to show a diff with delta
+				},
+			},
 			picker = {
 				sources = {
 					explorer = {},
@@ -57,8 +62,6 @@ return {
         -- stylua: ignore
 		keys = {
             { "<leader>gD", function() Snacks.picker.git_diff() end, desc = "Git Diff (Hunks)" },
-            { "gai", function() Snacks.picker.lsp_incoming_calls() end, desc = "C[a]lls Incoming" },
-            { "gao", function() Snacks.picker.lsp_outgoing_calls() end, desc = "C[a]lls Outgoing" },
             { "<leader>fy", function() Snacks.picker.cliphist() end, desc = "Find Clip Hist" },
             { "<leader>ee", function() Snacks.explorer() end,                    desc = "File Explorer", },
             { "<leader>fa", function() Snacks.picker.diagnostics() end,          desc = "Diagnostics" },

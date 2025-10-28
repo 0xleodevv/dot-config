@@ -1,14 +1,10 @@
-theme = Material Ocean
-# theme = "GruvboxDarkHard"
+theme = Ayu
 cursor-color = "#FFFFFF"
 
 
 # Font
-# font-family = "JetBrainsMono NFM Medium"
 font-family = "JetBrainsMono NFM"
-# font-family = Liga SFMono Nerd Font
 font-size = 12
-# adjust-cell-height = 1
 
 # background-opacity=0.9
 # background-blur=true

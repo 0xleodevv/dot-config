@@ -56,9 +56,9 @@ return {
 		end,
         -- stylua: ignore
 		keys = {
-            -- { "<leader>fg", function() Snacks.picker.git_files({ untracked = true, submodules = false }) end, desc = "Find Git Files" },
-            -- { "<leader>ff", function() Snacks.picker.files() end, desc = "Find All Files" },
-            -- { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
+            { "<leader>gD", function() Snacks.picker.git_diff() end, desc = "Git Diff (Hunks)" },
+            { "gai", function() Snacks.picker.lsp_incoming_calls() end, desc = "C[a]lls Incoming" },
+            { "gao", function() Snacks.picker.lsp_outgoing_calls() end, desc = "C[a]lls Outgoing" },
             { "<leader>fy", function() Snacks.picker.cliphist() end, desc = "Find Clip Hist" },
             { "<leader>ee", function() Snacks.explorer() end,                    desc = "File Explorer", },
             { "<leader>fa", function() Snacks.picker.diagnostics() end,          desc = "Diagnostics" },
@@ -80,7 +80,7 @@ return {
 				"<leader>fm",
 				function()
 					Snacks.picker.lsp_symbols({
-						-- layout = { preset = "vscode", preview = "main" },
+						layout = { preset = "vscode", preview = "main" },
 						filter = {
                             default = {
                                 "Class",

@@ -24,6 +24,7 @@ return {
 				overrides = {
 					LineNr = { fg = "#636A72" },
 					["@variable.member"] = { fg = "#D2A6FF" },
+					NonText = { fg = "#636A72" },
 				},
 			})
 

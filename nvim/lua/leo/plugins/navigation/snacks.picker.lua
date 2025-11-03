@@ -31,6 +31,7 @@ return {
 					cwd_bonus = true,
 				},
 			},
+			gh = {},
 		},
 		config = function(_, opts)
 			require("snacks").setup(opts)
@@ -61,7 +62,9 @@ return {
 		end,
         -- stylua: ignore
 		keys = {
-            { "<leader>gD", function() Snacks.picker.git_diff() end, desc = "Git Diff (Hunks)" },
+            { "<leader>fi", function() Snacks.picker.gh_issue() end, desc = "GitHub Issues (open)" },
+            { "<leader>fp", function() Snacks.picker.gh_pr() end, desc = "GitHub Pull Requests (open)" },
+            { "<leader>fh", function() Snacks.picker.git_diff() end, desc = "Git Diff (Hunks)" },
             { "<leader>fy", function() Snacks.picker.cliphist() end, desc = "Find Clip Hist" },
             { "<leader>ee", function() Snacks.explorer() end,                    desc = "File Explorer", },
             { "<leader>fa", function() Snacks.picker.diagnostics() end,          desc = "Diagnostics" },

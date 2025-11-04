@@ -86,7 +86,7 @@ return {
 				"<leader>fm",
 				function()
 					Snacks.picker.lsp_symbols({
-						layout = { preset = "vscode", preview = "main" },
+						layout = { preset = "vscode", hidden = {}, preview = "main" },
 						filter = {
                             default = {
                                 "Class",

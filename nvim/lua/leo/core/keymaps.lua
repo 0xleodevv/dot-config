@@ -18,6 +18,9 @@ vim.keymap.set("n", "<leader>q", "<cmd>wqa<cr>", { desc = "Save all and quit" })
 -- replace the current word
 vim.keymap.set("n", "<leader>R", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gIc<Left><Left><Left><Left>]])
 
+-- reload file
+vim.keymap.set("n", "<leader>er", "<cmd>e!<cr>", { desc = "Reload File" })
+
 -- increment/decrement numbers
 vim.keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
 vim.keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement

@@ -67,7 +67,6 @@ return {
             { "<leader>fh", function() Snacks.picker.git_diff() end, desc = "Git Diff (Hunks)" },
             { "<leader>fy", function() Snacks.picker.cliphist() end, desc = "Find Clip Hist" },
             { "<leader>ee", function() Snacks.explorer() end,                    desc = "File Explorer", },
-            { "<leader>fa", function() Snacks.picker.diagnostics() end,          desc = "Diagnostics" },
             { "<leader>fb", function() Snacks.picker.buffers() end,              desc = "Buffers" },
             { "<leader>ft", function() Snacks.picker.todo_comments() end,        desc = "Todo" },
             { "<leader>fs", function() Snacks.picker.grep() end,                 desc = "Grep" },

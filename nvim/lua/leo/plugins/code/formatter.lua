@@ -18,15 +18,15 @@ return {
 				lua = { "stylua" },
 				python = { "ruff" },
 			},
-			formatters = {
-				forge_fmt = {
-					command = "/Users/leopat/.foundry/bin/forge",
-					args = { "fmt" },
-					stdin = false,
-					cwd = require("conform.util").root_file({ "foundry.toml" }),
-					require_cwd = true,
-				},
+		formatters = {
+			forge_fmt = {
+				command = vim.fn.exepath("forge") ~= "" and vim.fn.exepath("forge") or "forge",
+				args = { "fmt" },
+				stdin = false,
+				cwd = require("conform.util").root_file({ "foundry.toml" }),
+				require_cwd = true,
 			},
+		},
 			format_on_save = {
 				lsp_fallback = true,
 				async = false,

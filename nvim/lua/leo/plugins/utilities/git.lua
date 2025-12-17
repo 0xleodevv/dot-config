@@ -4,6 +4,14 @@ return {
 		"esmuellert/vscode-diff.nvim",
 		dependencies = { "MunifTanjim/nui.nvim" },
 		cmd = "CodeDiff",
+		opts = {
+			highlights = {
+				line_insert = "#20281C",
+				line_delete = "#281C22",
+				-- char_insert = "#3fb950",
+				-- char_delete = "#ff7b72",
+			},
+		},
 	},
 	{
 		"lewis6991/gitsigns.nvim",

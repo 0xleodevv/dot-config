@@ -20,12 +20,18 @@ return {
 		opts = {
 			previewers = {
 				diff = {
-					cmd = { "delta" }, -- example to show a diff with delta
+					cmd = { "delta" },
 				},
 			},
 			picker = {
 				sources = {
-					explorer = {},
+					explorer = {
+						layout = {
+							layout = {
+								width = 30,
+							},
+						},
+					},
 				},
 				matcher = {
 					cwd_bonus = true,

@@ -13,6 +13,7 @@ return {
 					["@variable.member"] = { fg = "#D2A6FF" },
 					["@lsp.type.struct.rust"] = { fg = "#04C5FF" },
 					["@lsp.mod.constant.rust"] = { fg = "#FFAA33" },
+					Comment = { italic = false },
 				},
 			})
 

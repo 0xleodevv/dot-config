@@ -1,14 +1,16 @@
 return {
 	{
 		"dmtrKovalenko/fff.nvim",
-		build = "cargo build --release",
+		build = function()
+			require("fff.download").download_or_build_binary()
+		end,
 		opts = {
 			keymaps = {
 				move_up = { "<C-k>" },
 				move_down = { "<C-j>" },
 			},
 		},
-        --stylua: ignore
+	       --stylua: ignore
 		keys = {
 			{ "<leader>ff", function() require("fff").find_files() end, desc = "Open file picker" },
 		},

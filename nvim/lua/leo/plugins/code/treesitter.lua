@@ -8,13 +8,13 @@ return {
 		opts = {
 			ensure_installed = {
 				"bash",
+				"rust",
 				"c",
 				"diff",
 				"html",
 				"javascript",
 				"jsdoc",
 				"json",
-				"jsonc",
 				"lua",
 				"luadoc",
 				"luap",

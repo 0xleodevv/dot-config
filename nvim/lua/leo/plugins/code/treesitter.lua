@@ -11,6 +11,7 @@ return {
 				"rust",
 				"c",
 				"diff",
+				"doxygen",
 				"html",
 				"javascript",
 				"jsdoc",

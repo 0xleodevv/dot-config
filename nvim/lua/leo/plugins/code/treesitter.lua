@@ -63,4 +63,14 @@ return {
 		end,
 	},
 	{ "windwp/nvim-ts-autotag", event = { "BufRead" }, opts = {} },
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		branch = "main",
+		event = "VeryLazy",
+		opts = {
+			select = {
+				enable = true,
+			},
+		},
+	},
 }

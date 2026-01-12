@@ -3,6 +3,6 @@ return {
 	event = "BufRead",
 	opts = {
 		enable_tailwind = true,
-		exclude_filetypes = { "js", "ts", "json", "md", "toml", "sol" },
+		exclude_filetypes = { "js", "ts", "json", "md", "toml", "sol", "rs" },
 	},
 }

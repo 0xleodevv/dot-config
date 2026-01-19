@@ -2,7 +2,7 @@ return {
 	"gbprod/substitute.nvim",
 	opts = {
 		range = {
-			prefix = "r", -- Your custom prefix
+			prefix = "r",
 		},
 	},
 	config = function(_, opts)

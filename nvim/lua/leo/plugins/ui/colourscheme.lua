@@ -14,6 +14,12 @@ return {
 					["@lsp.type.struct.rust"] = { fg = "#04C5FF" },
 					["@lsp.mod.constant.rust"] = { fg = "#FFAA33" },
 					Comment = { italic = false },
+					MiniDiffOverAdd = { bg = "#1D2214" },
+					MiniDiffOverChange = { bg = "#2D2220" },
+					MiniDiffOverChangeBuf = { bg = "#1B3A5B" },
+					MiniDiffOverContext = { bg = "#11151C" },
+					MiniDiffOverContextBuf = { bg = "#11151C" },
+					MiniDiffOverDelete = { bg = "#2D2220" },
 				},
 			})
 

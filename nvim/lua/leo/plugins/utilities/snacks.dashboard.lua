@@ -50,7 +50,6 @@ return {
 				{
 					section = "terminal",
 					cmd = "chafa ~/.config/nvim/assets/crop.png --symbols vhalf --color-extractor median --size 40x40 --scale 1",
-					-- cmd = "chafa ~/.config/nvim/assets/crop.png",
 					height = 20,
 					padding = 1,
 				},

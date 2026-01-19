@@ -44,3 +44,16 @@ vim.keymap.set("n", "<Left>", "<cmd>vertical resize -3<cr>", { desc = "Decrease 
 
 vim.keymap.set("x", "/", "<C-\\><C-n>`</\\%V", { desc = "Search forward within visual selection" })
 vim.keymap.set("x", "?", "<C-\\><C-n>`>?\\%V", { desc = "Search backward within visual selection" })
+
+local maximized = false
+
+vim.keymap.set("n", "<leader>sm", function()
+	if maximized then
+		vim.cmd("wincmd =")
+		maximized = false
+	else
+		vim.cmd("wincmd _")
+		vim.cmd("wincmd |")
+		maximized = true
+	end
+end, { desc = "Toggle maximize split" })

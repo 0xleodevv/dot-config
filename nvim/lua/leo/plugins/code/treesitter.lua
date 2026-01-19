@@ -13,29 +13,29 @@ return {
 				"diff",
 				"doxygen",
 				"html",
+				"hyprlang",
 				"javascript",
 				"jsdoc",
 				"json",
 				"lua",
 				"luadoc",
-				"luap",
 				"markdown",
 				"markdown_inline",
-				"printf",
 				"python",
-				"query",
 				"regex",
 				"toml",
 				"tsx",
 				"typescript",
 				"vim",
 				"vimdoc",
-				"xml",
 				"yaml",
 			},
 		},
 		config = function(_, opts)
 			local ts = require("nvim-treesitter")
+			vim.filetype.add({
+				pattern = { [".*%.conf"] = "bash" },
+			})
 
 			-- Install missing parsers
 			local installed = ts.get_installed and ts.get_installed() or {}

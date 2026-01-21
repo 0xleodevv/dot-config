@@ -1,4 +1,3 @@
-vim.keymap.set("n", "<leader>hr", "<cmd>Lazy reload sunrise<CR>", { desc = "hot reload" })
 -- allows moving highlighted lines up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -15,11 +14,14 @@ vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
 -- Save all buffers and quit
 vim.keymap.set("n", "<leader>q", "<cmd>wqa<cr>", { desc = "Save all and quit" })
 
+-- Delete current buffer
+vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete buffer" })
+
 -- replace the current word
 vim.keymap.set("n", "<leader>R", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gIc<Left><Left><Left><Left>]])
 
 -- reload file
-vim.keymap.set("n", "<leader>er", "<cmd>e!<cr>", { desc = "Reload File" })
+vim.keymap.set("n", "<leader>br", "<cmd>e!<cr>", { desc = "Reload Buffer" })
 
 -- increment/decrement numbers
 vim.keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
